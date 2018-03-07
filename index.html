@@ -1,0 +1,42 @@
+<!Doctype html>
+<html>
+<head>
+	<title>Ballz</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="scripts/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/index.css">
+</head>
+<body>
+	<div class="heading">Ballz</div>
+	<div class="main">
+		<div class="arena">
+			<div class="start">
+				<div>
+					<label for="easy">Easy</label><input type="radio" id="easy" name="diff" checked="" >
+					<label for="medium">Medium</label><input type="radio" id="medium" name="diff" value="">
+					<label for="hard">Hard</label><input type="radio" id="hard" name="diff" value="">
+				</div>
+				<input type="button" id="start-btn" value="Start">
+			</div>
+			<div id="ball0" class="ball"></div>
+			<div id="ball1" class="ball"></div>
+			<div id="ball2" class="ball"></div>
+			<div id="ball3" class="ball"></div>
+			<div id="ball4" class="ball"></div>
+			<div id="ball5" class="ball"></div>
+			<div id="ball6" class="ball"></div>
+			<div id="ball7" class="ball"></div>
+			<div id='ball8' class='ball' etime='5'>+5s</div>
+		</div>
+		<div class="lead">
+			<div class="restart" onclick="location.reload()">Restart</div>
+			<div class="timer"><div>Time Left</div><div id="timer">60</div> Seconds</div>
+			<div class="Score">
+				<div class="sc"> Score </div> <div id ="score">0</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="scripts/index.js"></script>
+</body>
+</html>
