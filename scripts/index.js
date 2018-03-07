@@ -32,11 +32,6 @@ $(document).ready(function(){
 		}
 		var ball = [];
 		var bcount = 7;
-		// $("#ball8").click(function(){
-		// 	var xtime = $("#ball8").attr("etime");
-		// 	time = time + parseInt(xtime);
-		// 	$("#ball8").hide();
-		// });
 		var score = 0;
 		var widf = 40;
 		for (var i = 0; i <= bcount ; i++) {
@@ -55,9 +50,7 @@ $(document).ready(function(){
 			ball[i].radius = ball[i].width/2;
 			widf += 4;
 		}
-
 		function position(balll , ind){
-
 			var x = Math.random() * balll.maxX;
 			var y = Math.random() * balll.maxY;
 			balll.x  = x;
@@ -71,7 +64,6 @@ $(document).ready(function(){
 				if(dist<=balll.radius+ball[j].radius){
 					position(ball[ind] , ind);
 				}
-
 			};
 			balll.velX = (Math.random() * 4) +(8-ind)/3;
 			balll.velY = (Math.random() * 4) +(8-ind)/3;
@@ -85,10 +77,6 @@ $(document).ready(function(){
 		for(var i = 0 ; i<=bcount ; i++){
 			position(ball[i] , i);
 		}
-		// $("#ball8").css({"display" : "flex" , "width" : "45px" , "height" : "45px"});
-		// ball[8].width = 45;
-		// ball[8].height = 45;
-		// ball[8].radius = ball[8].width/2
 		function collide(ball1 , ball2){
 			var x1 = ball1.x +  ball1.radius;
 			var y1 = ball1.y + ball1.radius;
@@ -96,53 +84,28 @@ $(document).ready(function(){
 			var y2 = ball2.y +ball2.radius;
 			var dist =Math.sqrt(((y2-y1)*(y2-y1)) + ((x2-x1)*(x2-x1)));
 			if(dist<=ball1.radius+ball2.radius){
-			// 	if(ball1.senseX == ball2.senseX){
-			// 		if(ball1.velX>=ball2.velX){
-			// 			ball1.senseX = -ball1.senseX;
-			// 		}
-			// 		else{
-			// 			ball2.senseX = -ball2.senseX;
-			// 		}
-			// 	}
-			// 	else{
-			// 		ball1.senseX = -ball1.senseX;
-			// 		ball2.senseX = -ball2.senseX;
-			// 	}
-			// 	if(ball1.senseY == ball2.senseY){
-			// 		if(ball1.velY>=ball2.velY){
-			// 			ball1.senseY = -ball1.senseY;
-			// 		}
-			// 		else{
-			// 			ball2.senseY = -ball2.senseY;
-			// 		}
-			// 	}
-			// 	else{
-			// 		ball1.senseY = -ball1.senseY;
-			// 		ball2.senseY = -ball2.senseY;
-			// 	}
-			// 	ball1.x = ball1.x + (ball1.senseX * ball1.velX*multp)/60;
-			// 	ball2.x = ball2.x + (ball2.senseX * ball2.velX*multp)/60;
-			// 	ball1.y = ball1.y + (ball1.senseY * ball1.velY*multp)/60;
-			// 	ball2.y = ball2.y + (ball2.senseY * ball2.velY*multp)/60;
-			// }
-			var tempsense = ball1.senseX;
-			ball1.senseX = ball2.senseX;
-			ball2.senseX = tempsense;
-			tempsense = ball1.senseY;
-			ball1.senseY = ball2.senseY;
-			ball2.senseY = tempsense;
+			if (ball1.x + ball1.radius > ball2.x + ball2.radius){
+				ball1.senseX = 1;
+				ball2.senseX = -1;
+			}
+			else{
+				ball1.senseX = -1;
+				ball2.senseX = 1;
+			}
+			if (ball1.y + ball1.radius > ball2.y + ball2.radius){
+				ball1.senseY = 1;
+				ball2.senseY = -1;
+			}
+			else{
+				ball1.senseY = -1;
+				ball2.senseY = 1;
+			}
 			var tempv = ball1.velX;
 			ball1.velX = ball2.velX;
 			ball2.velX = tempv;
 			tempv = ball1.velY;
 			ball1.velY = ball2.velY;
 			ball2.velY = tempv;
-			// ball1.x = balll.senseX*7 + ball1.x;
-			// ball2.x = ball2.senseX*7 + ball2.x;
-			// ball1.y = balll.senseY*7 + ball1.y;
-			// ball2.y = ball2.senseY*7 + ball2.y;
-
-
 		}
 	}
 	function newpos(ball){
@@ -183,12 +146,10 @@ $(document).ready(function(){
 			$("#ball"+i).css("margin-top" , newY);
 		}
 	};
-
 	$(".ball").click(function(){
 		score += parseInt($(this).attr("point"));
 		$("#score").html(score);
 	});
 	var ti = setInterval(function() {newpos(ball)}, 1000/60);
-	// var et = setInterval(function(){$("#ball8").css("display" , "flex"); window.setTimeout(function(){ $("#ball8").css("display" , "none");} , 1000); } , 1000);
 });
 }); 
