@@ -8,6 +8,7 @@
 	flex-direction: row;
 	justify-content: space-evenly;
 	align-items: center;
+	
 }
 .heading{
 	font-family: "arial";
@@ -18,13 +19,15 @@
 	text-align: center;
 }
 .arena{
-	background: #000;
+	background-image: url('403526477-stars-wallpapers.jpg');
+	background-size: cover;
+	//background: #000;
 	width: 770px;
 	height: 480px;
 	position: relative;
 }
 .lead{
-	background: #763FF3;
+	background: #335D7E;
 	color: #eee;
 	height: 480px;
 	width: 200px;
@@ -41,7 +44,7 @@
 }
 .restart{
 	cursor: pointer;
-	color: #FE1C03;
+	color: #F27280;
 	text-decoration: underline;
 	font-size: 28px;
 }
@@ -55,7 +58,7 @@
 .start{
 	position: absolute;
 	width: 300px;
-	height: 100px;
+	height: 150px;
 	left: calc(50% - 150px);
 	top: calc(50% - 50px);
 	background: #00BA8B;
@@ -64,6 +67,8 @@
 	justify-content: center;
 	align-items: center;
 	color: #0C2834;
+	text-align:center;
+	box-shadow: 0 2px 5px #CCC;
 }
 #start-btn{
 	background: #0C2834;
@@ -73,11 +78,18 @@
 	color: #ccc;
 	padding: 5px 10px;
 	cursor: pointer;
+	margin-top: 5px;
+}
+.emh{
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
 }
 .ball{
 	position: absolute;
 	border-radius: 50%;
-	opacity: .5;
+	opacity: .65;
 	cursor: pointer;
 	border: none;
 }
@@ -89,9 +101,10 @@
 }
 #ball2{
 	background: #3393BB;
+	opacity: 0.8;
 }
 #ball3{
-	background: #753A7B;
+	background: #FFF;
 }
 #ball4{
 	background: #E3602F;
