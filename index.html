@@ -4,7 +4,6 @@
 <head>
 	<title>Hit the Balls</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- <script src="scripts/jquery-3.2.1.min.js"></script> -->
 	<style>
 		* {
 			padding: 0;
@@ -17,11 +16,10 @@
 			flex-direction: row;
 			justify-content: space-evenly;
 			align-items: center;
-
 		}
 
 		.heading {
-			color:#282222;
+			color: #282222;
 			position: absolute;
 			width: 80%;
 			text-align: center;
@@ -45,7 +43,7 @@
 		}
 
 		.lead {
-			background: #335D7E;
+			background: #343A40;
 			color: #eee;
 			height: 480px;
 			width: 200px;
@@ -63,7 +61,7 @@
 
 		.restart {
 			cursor: pointer;
-			color: #F27280;
+			color: #DC3545;
 			text-decoration: underline;
 			font-size: 28px;
 		}
@@ -78,10 +76,10 @@
 
 		.start {
 			position: absolute;
-			width: 300px;
-			height: 150px;
-			left: calc(50% - 150px);
-			top: calc(50% - 50px);
+			width: 450px;
+			height: 280px;
+			left: calc(50% - 225px);
+			top: calc(50% - 140px);
 			background: #00BA8B;
 			display: flex;
 			flex-direction: column;
@@ -151,29 +149,16 @@
 			background: #F0FF00;
 		}
 
-		/*#ball8{
-	background: white;
-	width: 45px;
-	opacity: 1;
-	box-sizing: border-box;
-	text-align: center;
-	color: #0C2834;
-	font-family: "arial";
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	height: 45px;
-	border-radius: 50%;
-	display: none;
-	font-weight: 700;
-}*/
+		.htp {
+			font-size: 20px;
+			font-weight: 600;
+			margin: 6px auto;
+		}
 	</style>
 	<script>
 		var score = 0;
 		function sad(s) {
 			score += parseInt(s);
-			// console.log(s)
 			document.getElementById("score").innerHTML = score;
 		}
 	</script>
@@ -184,6 +169,17 @@
 	<div class="main">
 		<div class="arena">
 			<div class="start">
+				<div>
+					<div class="htp">
+						How to play?
+					</div>
+					<div>
+						You have 60 seconds, click the balls as many as possible times to get the maximum score.
+					</div>
+				</div>
+				<div class="htp">
+					Select Level
+				</div>
 				<div class="emh">
 					<label for="easy">Easy</label><input type="radio" id="easy" name="diff" checked="">
 					<label for="medium">Medium</label><input type="radio" id="medium" name="diff" value="">
